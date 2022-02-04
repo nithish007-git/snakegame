@@ -1,0 +1,48 @@
+from turtle import Turtle
+MOVEW=20
+UP=90
+DOWN=270
+LEFT=180
+RIGHT=0
+START=[(0,0),(-20,0),(-40,0)]
+class Snake:
+    def __init__(self):
+        self.seg=[]
+        self.create_snake()
+        self.head =self.seg[0]
+    def create_snake(self):
+        for i in START:
+            new = Turtle("square")
+            new.color("white")
+            new.penup()
+            new.goto(i)
+            self.seg.append(new)
+    def add_segment(self,p):
+    def move(self):
+        for i in range(len(self.seg) - 1, 0, -1):
+            x = self.seg[i - 1].xcor()
+            y = self.seg[i - 1].ycor()
+            self.seg[i].goto(x, y)
+
+    def up(self):
+       self.head.setheading(90)
+       self.head.forward(20)
+
+
+    def down(self):
+       self.head.setheading(90)
+       self.head.backward(20)
+
+    def left(self):
+       self.head.setheading(90)
+       self.head.left(90)
+       self.head.forward(20)
+
+    def right(self):
+       self.head.setheading(90)
+       self.head.right(90)
+       self.head.forward(20)
+
+
+
+
